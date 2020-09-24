@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StudentScore.IRespository\StudentScore.IRepository.csproj" />
+    <ProjectReference Include="..\StudentScore.IService\StudentScore.IService.csproj" />
+    <ProjectReference Include="..\StudentScore.Repository\StudentScore.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

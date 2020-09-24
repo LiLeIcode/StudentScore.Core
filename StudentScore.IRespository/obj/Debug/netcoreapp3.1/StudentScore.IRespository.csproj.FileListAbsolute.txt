@@ -1,0 +1,12 @@
+D:\CSharperWeb\Lreandotnet.Core\StudentScore.IRespository\bin\Debug\netcoreapp3.1\StudentScore.IRespository.exe
+D:\CSharperWeb\Lreandotnet.Core\StudentScore.IRespository\bin\Debug\netcoreapp3.1\StudentScore.IRespository.deps.json
+D:\CSharperWeb\Lreandotnet.Core\StudentScore.IRespository\bin\Debug\netcoreapp3.1\StudentScore.IRespository.runtimeconfig.json
+D:\CSharperWeb\Lreandotnet.Core\StudentScore.IRespository\bin\Debug\netcoreapp3.1\StudentScore.IRespository.runtimeconfig.dev.json
+D:\CSharperWeb\Lreandotnet.Core\StudentScore.IRespository\bin\Debug\netcoreapp3.1\StudentScore.IRespository.dll
+D:\CSharperWeb\Lreandotnet.Core\StudentScore.IRespository\bin\Debug\netcoreapp3.1\StudentScore.IRespository.pdb
+D:\CSharperWeb\Lreandotnet.Core\StudentScore.IRespository\obj\Debug\netcoreapp3.1\StudentScore.IRespository.AssemblyInfoInputs.cache
+D:\CSharperWeb\Lreandotnet.Core\StudentScore.IRespository\obj\Debug\netcoreapp3.1\StudentScore.IRespository.AssemblyInfo.cs
+D:\CSharperWeb\Lreandotnet.Core\StudentScore.IRespository\obj\Debug\netcoreapp3.1\StudentScore.IRespository.csproj.CoreCompileInputs.cache
+D:\CSharperWeb\Lreandotnet.Core\StudentScore.IRespository\obj\Debug\netcoreapp3.1\StudentScore.IRespository.dll
+D:\CSharperWeb\Lreandotnet.Core\StudentScore.IRespository\obj\Debug\netcoreapp3.1\StudentScore.IRespository.pdb
+D:\CSharperWeb\Lreandotnet.Core\StudentScore.IRespository\obj\Debug\netcoreapp3.1\StudentScore.IRespository.genruntimeconfig.cache

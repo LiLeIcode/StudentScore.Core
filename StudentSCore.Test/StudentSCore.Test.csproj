@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SrudentScore.Service\StudentScore.Service.csproj" />
+    <ProjectReference Include="..\StudentScore.Extensions\StudentScore.Extensions.csproj" />
+    <ProjectReference Include="..\StudentScore.IService\StudentScore.IService.csproj" />
+    <ProjectReference Include="..\StudentScore.Repository\StudentScore.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

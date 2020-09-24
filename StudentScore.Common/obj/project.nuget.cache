@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "X0CQ0ehg4H1h6zW3c+iM3jPvcr2H6BY/1o60/EHgGVh2AUR0swyeD/H3LAeO7M0h5wl8yii1EU8TdiCoywPndQ==",
+  "success": true,
+  "projectFilePath": "D:\\CSharperWeb\\StudentScore.Core\\StudentScore.Common\\StudentScore.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.3\\microsoft.aspnetcore.app.ref.3.1.3.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StudentScore.Core</name>
+    </assembly>
+    <members>
+        <member name="M:StudentScore.Core.Controllers.LoginController.PostToken(StudentScore.Models.ResponseModels.LoginUser)">
+            <summary>
+            登录拿token 例：account:123456   password:123456
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StudentScore.Core.Controllers.OperationController.UpdateScore(System.Int64,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            修改成绩
+            根据学生id查询学生信息查出成绩单id再修改成绩单
+            </summary>
+            <param name="studentId">2</param>
+            <param name="Chinese">88</param>
+            <param name="English">88</param>
+            <param name="Math">77</param>
+            <returns></returns>
+        </member>
+        <member name="M:StudentScore.Core.Controllers.OperationController.UpdateClass(System.Int64,System.Int64)">
+            <summary>
+            修改学生班级
+            </summary>
+            <param name="studentId">1</param>
+            <param name="classId">1</param>
+            <returns></returns>
+        </member>
+        <member name="M:StudentScore.Core.Controllers.OperationController.UpdateStudentInfo(System.Int64,StudentScore.Models.ResponseModels.StudentNewInfo)">
+            <summary>
+            更改学生信息
+            </summary>
+            <param name="studentId">1</param>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StudentScore.Core.Controllers.ReportCardController.PostAddReport(StudentScore.Models.ResponseModels.StudentReportCardModel)">
+            <summary>
+            添加成绩给学生
+            </summary>
+            <param name="studentReport"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StudentScore.Core.Controllers.RoleController.AddRole(System.Int64,System.Int64)">
+            <summary>
+            添加角色
+            </summary>
+            <param name="userId"></param>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StudentScore.Core.Controllers.RoleController.UpdateRole(System.Int64,System.Int64)">
+            <summary>
+            修改用户的Role
+            </summary>
+            <param name="userId"></param>
+            <param name="roleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StudentScore.Core.Controllers.StudentClassController.PostAddClass(System.String)">
+            <summary>
+            新增班级
+            </summary>
+            <param name="className"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StudentScore.Core.Controllers.StudentInfoController.GetAllStudentInfo">
+            <summary>
+            获取所有学生的所有信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StudentScore.Core.Controllers.StudentInfoController.GetGradesStudentInfo(System.String)">
+            <summary>
+            根据班级获得本班所有学生 例：grades=大一计算机1班
+            </summary>
+            <param name="grades">大一计算机1班</param>
+            <returns></returns>
+        </member>
+        <member name="M:StudentScore.Core.Controllers.StudentInfoController.PostAddStudent(StudentScore.Models.ResponseModels.StudentInfoModel)">
+            <summary>
+            添加新学生
+            </summary>
+            <param name="studentInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StudentScore.Core.Controllers.StudentInfoController.PostStudentClass(System.Int64,System.Int64)">
+            <summary>
+            给无班级学生添加班级
+            </summary>
+            <param name="id"></param>
+            <param name="studentClassId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StudentScore.Core.Controllers.UserController.RegisterUser(System.String,System.String)">
+            <summary>
+            注册用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StudentScore.Core.Controllers.UserController.UpdateUserInfo(System.String,System.String,System.String)">
+            <summary>
+            修改user的密码
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
