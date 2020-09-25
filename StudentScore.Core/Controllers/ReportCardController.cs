@@ -20,8 +20,8 @@ namespace StudentScore.Core.Controllers
     {
         private IReportCardService _reportCardService;
         private IStudentInfoService _studentInfoService;
-        
-        public ReportCardController(IReportCardService reportCardService,IStudentInfoService studentInfoService)
+
+        public ReportCardController(IReportCardService reportCardService, IStudentInfoService studentInfoService)
         {
             _reportCardService = reportCardService;
             _studentInfoService = studentInfoService;
@@ -33,27 +33,33 @@ namespace StudentScore.Core.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("addReport")]
-        public async Task<MessageModel<StudentReportCardModel>> PostAddReport(StudentReportCardModel studentReport)
+        public async Task<MessageModel<bool>> PostAddReport(StudentReportCardModel studentReport)
         {
             if (ModelState.IsValid)
             {
                 StudentInfo result = await _studentInfoService.QueryById(studentReport.Id);
-                result.ReportCard = new ReportCard()
-                {
-                    Chinese = studentReport.Chinese,
-                    Math = studentReport.Math,
-                    English = studentReport.English
-                };
-                return new MessageModel<StudentReportCardModel>()
+                long add = await _reportCardService.Add(
+                    new ReportCard()
+                    {
+                        Chinese = studentReport.Chinese,
+                        Math = studentReport.Math,
+                        English = studentReport.English
+                    }
+                );
+                result.ReportCardID = add;
+                bool update = await _studentInfoService.Update(result);
+
+                return new MessageModel<bool>()
                 {
                     msg = "添加成绩完成",
                     status = 200,
-                    success = true
+                    success = true,
+                    response = update
                 };
             }
             else
             {
-                return new MessageModel<StudentReportCardModel>()
+                return new MessageModel<bool>()
                 {
                     msg = "添加成绩失败",
                     success = false

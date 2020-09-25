@@ -11,3 +11,16 @@ D:\CSharperWeb\Lreandotnet.Core\StudentScore.Common\obj\Debug\netcoreapp3.1\Stud
 D:\CSharperWeb\Lreandotnet.Core\StudentScore.Common\obj\Debug\netcoreapp3.1\StudentScore.Common.dll
 D:\CSharperWeb\Lreandotnet.Core\StudentScore.Common\obj\Debug\netcoreapp3.1\StudentScore.Common.pdb
 D:\CSharperWeb\Lreandotnet.Core\StudentScore.Common\obj\Debug\netcoreapp3.1\StudentScore.Common.genruntimeconfig.cache
+D:\CSharperWeb\StudentScore.Core\StudentScore.Common\bin\Debug\netcoreapp3.1\StudentScore.Common.exe
+D:\CSharperWeb\StudentScore.Core\StudentScore.Common\bin\Debug\netcoreapp3.1\StudentScore.Common.deps.json
+D:\CSharperWeb\StudentScore.Core\StudentScore.Common\bin\Debug\netcoreapp3.1\StudentScore.Common.runtimeconfig.json
+D:\CSharperWeb\StudentScore.Core\StudentScore.Common\bin\Debug\netcoreapp3.1\StudentScore.Common.runtimeconfig.dev.json
+D:\CSharperWeb\StudentScore.Core\StudentScore.Common\bin\Debug\netcoreapp3.1\StudentScore.Common.dll
+D:\CSharperWeb\StudentScore.Core\StudentScore.Common\bin\Debug\netcoreapp3.1\StudentScore.Common.pdb
+D:\CSharperWeb\StudentScore.Core\StudentScore.Common\obj\Debug\netcoreapp3.1\StudentScore.Common.csprojAssemblyReference.cache
+D:\CSharperWeb\StudentScore.Core\StudentScore.Common\obj\Debug\netcoreapp3.1\StudentScore.Common.AssemblyInfoInputs.cache
+D:\CSharperWeb\StudentScore.Core\StudentScore.Common\obj\Debug\netcoreapp3.1\StudentScore.Common.AssemblyInfo.cs
+D:\CSharperWeb\StudentScore.Core\StudentScore.Common\obj\Debug\netcoreapp3.1\StudentScore.Common.csproj.CoreCompileInputs.cache
+D:\CSharperWeb\StudentScore.Core\StudentScore.Common\obj\Debug\netcoreapp3.1\StudentScore.Common.dll
+D:\CSharperWeb\StudentScore.Core\StudentScore.Common\obj\Debug\netcoreapp3.1\StudentScore.Common.pdb
+D:\CSharperWeb\StudentScore.Core\StudentScore.Common\obj\Debug\netcoreapp3.1\StudentScore.Common.genruntimeconfig.cache

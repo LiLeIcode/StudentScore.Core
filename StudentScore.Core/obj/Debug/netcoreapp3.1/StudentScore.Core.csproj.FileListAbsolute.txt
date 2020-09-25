@@ -172,11 +172,13 @@ D:\CSharperWeb\StudentScore.Core\StudentScore.Core\bin\Debug\netcoreapp3.1\Stude
 D:\CSharperWeb\StudentScore.Core\StudentScore.Core\obj\Debug\netcoreapp3.1\StudentScore.Core.csprojAssemblyReference.cache
 D:\CSharperWeb\StudentScore.Core\StudentScore.Core\obj\Debug\netcoreapp3.1\StudentScore.Core.AssemblyInfoInputs.cache
 D:\CSharperWeb\StudentScore.Core\StudentScore.Core\obj\Debug\netcoreapp3.1\StudentScore.Core.AssemblyInfo.cs
-D:\CSharperWeb\StudentScore.Core\StudentScore.Core\obj\Debug\netcoreapp3.1\StudentScore.Core.csproj.CoreCompileInputs.cache
-D:\CSharperWeb\StudentScore.Core\StudentScore.Core\obj\Debug\netcoreapp3.1\StudentScore.Core.MvcApplicationPartsAssemblyInfo.cs
-D:\CSharperWeb\StudentScore.Core\StudentScore.Core\obj\Debug\netcoreapp3.1\StudentScore.Core.MvcApplicationPartsAssemblyInfo.cache
 D:\CSharperWeb\StudentScore.Core\StudentScore.Core\obj\Debug\netcoreapp3.1\StudentScore.Core.RazorTargetAssemblyInfo.cache
 D:\CSharperWeb\StudentScore.Core\StudentScore.Core\obj\Debug\netcoreapp3.1\StudentScore.Core.csproj.CopyComplete
 D:\CSharperWeb\StudentScore.Core\StudentScore.Core\obj\Debug\netcoreapp3.1\StudentScore.Core.dll
 D:\CSharperWeb\StudentScore.Core\StudentScore.Core\obj\Debug\netcoreapp3.1\StudentScore.Core.pdb
 D:\CSharperWeb\StudentScore.Core\StudentScore.Core\obj\Debug\netcoreapp3.1\StudentScore.Core.genruntimeconfig.cache
+D:\CSharperWeb\StudentScore.Core\StudentScore.Core\bin\Debug\netcoreapp3.1\libman.json
+D:\CSharperWeb\StudentScore.Core\StudentScore.Core\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\CSharperWeb\StudentScore.Core\StudentScore.Core\obj\Debug\netcoreapp3.1\StudentScore.Core.csproj.CoreCompileInputs.cache
+D:\CSharperWeb\StudentScore.Core\StudentScore.Core\obj\Debug\netcoreapp3.1\StudentScore.Core.MvcApplicationPartsAssemblyInfo.cs
+D:\CSharperWeb\StudentScore.Core\StudentScore.Core\obj\Debug\netcoreapp3.1\StudentScore.Core.MvcApplicationPartsAssemblyInfo.cache

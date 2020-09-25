@@ -20,16 +20,11 @@ namespace StudentScore.Models
         public char Sex { get; set; }
 
         public int Age { get; set; }
-
-        [ForeignKey(nameof(ReportCard))]
+      
         public long ReportCardID { get; set; }
 
-        public ReportCard ReportCard { get; set; }
-
-        [ForeignKey(nameof(StudentClass))]
         public long StudentClassID { get; set; }
 
-        public StudentClass StudentClass { get; set; }
 
 
     }

@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using StudentScore.IService;
 using StudentScore.Models;
 using StudentScore.Models.ResponseModels;
@@ -20,12 +22,14 @@ namespace StudentScore.Core.Controllers
         private readonly IReportCardService _reportCardService;
         private readonly IStudentClassService _studentClassService;
         private readonly IStudentInfoService _studentInfoService;
+        private IMemoryCache _cache;
 
-        public StudentInfoController(IStudentInfoService studentInfoService,IStudentClassService studentClassService,IReportCardService reportCardService)
+        public StudentInfoController(IStudentInfoService studentInfoService,IStudentClassService studentClassService,IReportCardService reportCardService, IMemoryCache cache)
         {
             _studentInfoService = studentInfoService;
             _studentClassService = studentClassService;
             _reportCardService = reportCardService;
+            _cache = cache;
         }
         /// <summary>
         /// 获取所有学生的所有信息
@@ -35,40 +39,52 @@ namespace StudentScore.Core.Controllers
         [Route("AllStudentInfo")]
         public async Task<MessageModel<List<AllStudentInfoModel>>> GetAllStudentInfo()
         {
-            List<AllStudentInfoModel> studentAllInfo = new List<AllStudentInfoModel>();
-            var studentInfos = await _studentInfoService.QueryAll().ToListAsync();
-            var studentClasses = await _studentClassService.QueryAll().ToListAsync();
-            var reportCards = await _reportCardService.QueryAll().ToListAsync();
-            foreach (StudentInfo info in studentInfos)
+            List<AllStudentInfoModel> list = _cache.Get<List<AllStudentInfoModel>>("allStudent");
+            if (list==null)
             {
-                studentAllInfo.Add(new AllStudentInfoModel()
+                List<AllStudentInfoModel> studentAllInfo = new List<AllStudentInfoModel>();
+                var studentInfos = await _studentInfoService.QueryAll().ToListAsync();
+                var studentClasses = await _studentClassService.QueryAll().ToListAsync();
+                var reportCards = await _reportCardService.QueryAll().ToListAsync();
+                foreach (StudentInfo info in studentInfos)
                 {
-                    Id = info.ID,
-                    Name = info.Name,
-                    StringNumber = info.StudentNumber,
-                    Age = info.Age,
-                    Sex = info.Sex,
-                    AllStudentClass = new AllStudentClassModel()
+                    studentAllInfo.Add(new AllStudentInfoModel()
                     {
-                        Id = info.StudentClassID,
-                        Grades = studentClasses.FirstOrDefault(x=>x.ID==info.StudentClassID)?.Grades
-                    },
-                    StudentReportCard = new StudentReportCardModel()
-                    {
-                        Id = info.ReportCardID,
-                        Chinese = reportCards.FirstOrDefault(x=>x.ID==info.ReportCardID)?.Chinese==null?0: reportCards.FirstOrDefault(x => x.ID == info.ReportCardID).Chinese,
-                        Math = reportCards.FirstOrDefault(x=>x.ID==info.ReportCardID)?.Math==null?0: reportCards.FirstOrDefault(x => x.ID == info.ReportCardID).Math,
-                        English = reportCards.FirstOrDefault(x=>x.ID==info.ReportCardID)?.English==null?0: reportCards.FirstOrDefault(x => x.ID == info.ReportCardID).English
-                    }
-                });
-            }
+                        Id = info.ID,
+                        Name = info.Name,
+                        StringNumber = info.StudentNumber,
+                        Age = info.Age,
+                        Sex = info.Sex,
+                        AllStudentClass = new AllStudentClassModel()
+                        {
+                            Id = info.StudentClassID,
+                            Grades = studentClasses.FirstOrDefault(x => x.ID == info.StudentClassID)?.Grades
+                        },
+                        StudentReportCard = new StudentReportCardModel()
+                        {
+                            Id = info.ReportCardID,
+                            Chinese = reportCards.FirstOrDefault(x => x.ID == info.ReportCardID)?.Chinese == null ? 0 : reportCards.FirstOrDefault(x => x.ID == info.ReportCardID).Chinese,
+                            Math = reportCards.FirstOrDefault(x => x.ID == info.ReportCardID)?.Math == null ? 0 : reportCards.FirstOrDefault(x => x.ID == info.ReportCardID).Math,
+                            English = reportCards.FirstOrDefault(x => x.ID == info.ReportCardID)?.English == null ? 0 : reportCards.FirstOrDefault(x => x.ID == info.ReportCardID).English
+                        }
+                    });
+                }
 
+                _cache.Set("allStudent", studentAllInfo,new MemoryCacheEntryOptions().SetSlidingExpiration(TimeSpan.FromSeconds(7200)));
+                return new MessageModel<List<AllStudentInfoModel>>()
+                {
+                    msg = "请求成功",
+                    status = 200,
+                    success = true,
+                    response = studentAllInfo
+                };
+            }
             return new MessageModel<List<AllStudentInfoModel>>() 
             {
                 msg = "请求成功",
                 status = 200,
                 success = true,
-                response = studentAllInfo
+                response = list
             };
 
         }
@@ -123,10 +139,11 @@ namespace StudentScore.Core.Controllers
             {
                 var addStudent = await _studentInfoService.Add(new StudentInfo()
                 {
+                    
                     Name = studentInfo.Name,
                     StudentNumber = studentInfo.StudentNumber,
                     Sex = studentInfo.Sex,
-                    Age = studentInfo.Age
+                    Age = studentInfo.Age,
                 });
                 return new MessageModel<string>()
                 {
@@ -140,7 +157,7 @@ namespace StudentScore.Core.Controllers
             {
                 return new MessageModel<string>()
                 {
-                    msg = "添加学生信息成功",
+                    msg = "添加学生信息失败",
                     success = false,
                 };
             }

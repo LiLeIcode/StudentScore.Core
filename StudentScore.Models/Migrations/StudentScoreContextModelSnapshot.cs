@@ -69,7 +69,7 @@ namespace StudentScore.Models.Migrations
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("StudentScore.Models.AllStudentClass", b =>
+            modelBuilder.Entity("StudentScore.Models.StudentClass", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -88,7 +88,7 @@ namespace StudentScore.Models.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("AllStudentClass");
+                    b.ToTable("StudentClass");
                 });
 
             modelBuilder.Entity("StudentScore.Models.StudentInfo", b =>
@@ -126,10 +126,6 @@ namespace StudentScore.Models.Migrations
                         .HasMaxLength(30);
 
                     b.HasKey("ID");
-
-                    b.HasIndex("ReportCardID");
-
-                    b.HasIndex("StudentClassID");
 
                     b.ToTable("StudentInfo");
                 });
@@ -184,21 +180,6 @@ namespace StudentScore.Models.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("StudentScore.Models.StudentInfo", b =>
-                {
-                    b.HasOne("StudentScore.Models.ReportCard", "ReportCard")
-                        .WithMany()
-                        .HasForeignKey("ReportCardID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("StudentScore.Models.AllStudentClass", "AllStudentClass")
-                        .WithMany()
-                        .HasForeignKey("StudentClassID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

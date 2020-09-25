@@ -7,6 +7,7 @@ using IdentityModel;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.IdentityModel.Tokens;
 using StudentScore.Extensions.Authorizations;
 using StudentScore.IService;
@@ -38,7 +39,7 @@ namespace StudentScore.Core.Controllers
         /// <returns></returns>
         [Route("token")]
         [HttpPost]
-        public async Task<MessageModel<string>> PostToken([FromBody]LoginUser user)
+        public async Task<MessageModel<string>> PostToken([FromBody] LoginUser user)
         {
             if (!ModelState.IsValid)
             {
@@ -54,7 +55,6 @@ namespace StudentScore.Core.Controllers
                 UserRole userRoles = await _userRoleService.QueryExp(x => x.UserId == users.ID).FirstOrDefaultAsync();
                 //改角色的权限
                 Roles roleName = await _roleService.QueryById(userRoles.RoleId);
-
                 Claim[] claims = new Claim[]
                 {
                     new Claim(JwtClaimTypes.Id, users.ID.ToString()),
@@ -62,7 +62,7 @@ namespace StudentScore.Core.Controllers
                     new Claim(JwtClaimTypes.Role, roleName.RoleName),
                 };
                 var nbf = DateTime.UtcNow;//生效时间
-                var exp = DateTime.UtcNow.AddSeconds(1000);//过期时间
+                var exp = DateTime.UtcNow.AddSeconds(7200);//过期时间
                 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(ConfigField.Secret));
                 var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
                 JwtSecurityToken jwt = new JwtSecurityToken(issuer: ConfigField.Iss, audience: ConfigField.Aud, claims: claims, notBefore: nbf, expires: exp,

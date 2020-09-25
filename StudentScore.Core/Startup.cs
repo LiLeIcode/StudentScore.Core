@@ -1,13 +1,9 @@
 ﻿using System;
 using System.IO;
-using System.Security.Claims;
 using System.Text;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -125,6 +121,8 @@ namespace StudentScore.Core
                 //允许任何地址访问
                 c.AddPolicy("cors", policy => { policy.WithOrigins("*").AllowAnyHeader().AllowAnyMethod(); });
             });
+
+            services.AddMemoryCache();
 
         }
 
